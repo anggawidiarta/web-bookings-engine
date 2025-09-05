@@ -1,8 +1,16 @@
+"use client";
 // import Link from "next/link";
 
 import Link from "next/link";
+import Image from "next/image";
+import { useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, A11y } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
 
 export default function Dining() {
+  const [activeIndex, setActiveIndex] = useState(0);
   const specialties = [
     {
       name: "Baplo",
@@ -19,6 +27,20 @@ export default function Dining() {
     {
       name: "Madrouba",
       desc: "A rice porridge with vegetables",
+    },
+  ];
+  const privateDining = [
+    {
+      title: "Private island lunch at Barkaa",
+      desc: "After exploring The Malkai’s private Dimniyat island, delight in a serene lunch on its UNESCO protected beach.",
+    },
+    {
+      title: "Candelit Bedouin tent at Hajar",
+      desc: "Enjoy a private barbecue lunch or dinner at the edge of the canyon surrounded by panoramic views.",
+    },
+    {
+      title: "Starlit dunes dinner in Sharqiyah",
+      desc: "An intimate table set among the sands, with a sky of a thousand stars and traditional music.",
     },
   ];
   const menusLeft = [
@@ -181,9 +203,12 @@ export default function Dining() {
                     key={i}
                     className="flex items-center gap-4 py-4 border-b border-[--color-border]"
                   >
-                    <span className="grid place-items-center w-10 h-7 border border-[--color-border] text-[10px] tracking-[0.18em] text-[--color-muted]">
-                      PDF
-                    </span>
+                    <Image
+                      src="/images/pdf-svgrepo-com.svg"
+                      alt="PDF"
+                      width={24}
+                      height={24}
+                    />
                     <Link
                       href={m.href}
                       className="hover:underline underline-offset-8"
@@ -200,9 +225,12 @@ export default function Dining() {
                     key={i}
                     className="flex items-center gap-4 py-4 border-b border-[--color-border]"
                   >
-                    <span className="grid place-items-center w-10 h-7 border border-[--color-border] text-[10px] tracking-[0.18em] text-[--color-muted]">
-                      PDF
-                    </span>
+                    <Image
+                      src="/images/pdf-svgrepo-com.svg"
+                      alt="PDF"
+                      width={24}
+                      height={24}
+                    />
                     <Link
                       href={m.href}
                       className="hover:underline underline-offset-8"
@@ -222,16 +250,88 @@ export default function Dining() {
             </div>
           </div>
 
+          {/* Private dining - Swiper carousel */}
+          <div className="mt-16">
+            <h2 className="font-serif text-2xl md:text-[28px]">
+              Private dining
+            </h2>
+
+            <div className="relative mt-6 -mr-20">
+              <Swiper
+                modules={[Navigation, A11y]}
+                slidesPerView={1}
+                loop={true}
+                onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
+                navigation={{
+                  nextEl: ".pd-next",
+                  prevEl: ".pd-prev",
+                }}
+                className="bg-[#efefef] h-[420px] md:h-[540px]"
+              >
+                {privateDining.map((_, idx) => (
+                  <SwiperSlide key={idx}>
+                    <div className="w-full h-full" />
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+
+              {/* Custom nav buttons */}
+              <div className="flex absolute bottom-4 left-4 z-10 gap-2">
+                <button
+                  aria-label="Previous"
+                  className="pd-prev grid place-items-center w-9 h-9 bg-white/95 border border-[--color-border] hover:bg-white"
+                >
+                  <span className="-mt-0.5">‹</span>
+                </button>
+                <button
+                  aria-label="Next"
+                  className="pd-next grid place-items-center w-9 h-9 bg-white/95 border border-[--color-border] hover:bg-white"
+                >
+                  <span className="-mt-0.5">›</span>
+                </button>
+              </div>
+            </div>
+
+            {/* Captions below - current and next */}
+            <div className="grid grid-cols-1 gap-10 mt-8 md:grid-cols-2">
+              <div>
+                <h3 className="font-serif text-2xl">
+                  {privateDining[activeIndex]?.title}
+                </h3>
+                <p className="mt-3 text-[--color-muted] text-sm leading-relaxed max-w-xl">
+                  {privateDining[activeIndex]?.desc}
+                </p>
+                <div className="mt-6 h-[2px] bg-[--color-border] relative max-w-[260px]">
+                  <div
+                    className="absolute top-0 left-0 h-full bg-black"
+                    style={{
+                      width: `${
+                        ((activeIndex + 1) / privateDining.length) * 100
+                      }%`,
+                    }}
+                  />
+                </div>
+              </div>
+
+              <div>
+                <h3 className="font-serif text-2xl">
+                  {
+                    privateDining[(activeIndex + 1) % privateDining.length]
+                      ?.title
+                  }
+                </h3>
+                <p className="mt-3 text-[--color-muted] text-sm leading-relaxed max-w-xl">
+                  {
+                    privateDining[(activeIndex + 1) % privateDining.length]
+                      ?.desc
+                  }
+                </p>
+              </div>
+            </div>
+          </div>
+
           {/* Enrichment cards */}
           <div className="mt-20">
-            <h2 className="font-serif text-2xl md:text-[28px] text-center">
-              Your journey, enriched.
-            </h2>
-            <p className="mt-3 text-center text-[--color-muted] text-sm md:text-base">
-              Discover how each location connects to the heart of our philosophy
-              — through dining, wellness and adventure
-            </p>
-
             <div className="grid grid-cols-1 mt-10 md:grid-cols-2">
               <div className="flex flex-col justify-between border border-[--color-border] p-8 md:p-10 bg-background">
                 <div>
