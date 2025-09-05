@@ -1,5 +1,7 @@
 // import Link from "next/link";
 
+import Link from "next/link";
+
 export default function Barkaa() {
   return (
     <main>
@@ -89,6 +91,113 @@ export default function Barkaa() {
                   East‑meets‑West planting style and architecture.
                 </figcaption>
               </figure>
+            </div>
+          </div>
+
+          {/* Two column content: media + copy */}
+          <div className="grid relative grid-cols-1 gap-10 mt-10 w-full md:grid-cols-2">
+            <div className="overflow-hidden border h-[500px] w-full border-[--color-border] bg-[#efefef] aspect-[16/10] md:aspect-[4/3]"></div>
+            <div className="max-w-3xl">
+              <h3 className="font-serif text-xl md:text-2xl">Farm-to-fork </h3>
+              <div className="mt-4 space-y-3 text-[--color-muted] text-[16px] leading-relaxed">
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
+                  labore, suscipit veritatis optio consequatur ut id delectus!
+                  Qui omnis consequatur fugit, minima quae assumenda nostrum
+                  veniam voluptatibus, porro magni repudiandae expedita
+                  cupiditate debitis, libero nobis.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="grid relative grid-cols-1 gap-10 mt-10 w-full md:grid-cols-2">
+            <div className="text-right">
+              <h3 className="font-serif text-xl md:text-2xl">Farm-to-fork</h3>
+              <div className="mt-4 space-y-3 text-[--color-muted] text-[16px] leading-relaxed">
+                <p>
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt
+                  dolorem incidunt cumque earum fugit excepturi ut dolorum et
+                  doloribus repellendus. Natus, totam nemo? Repudiandae iure
+                  fuga culpa suscipit. Dicta itaque harum animi laborum tempora
+                  necessitatibus.
+                </p>
+              </div>
+            </div>
+            <div className="overflow-hidden border h-[500px] w-full border-[--color-border] bg-[#efefef] aspect-[16/10] md:aspect-[4/3]"></div>
+          </div>
+
+          {/* Enrichment cards */}
+          <div className="mt-20">
+            <h2 className="font-serif text-2xl md:text-[28px] text-center">
+              Your journey, enriched.
+            </h2>
+            <p className="mt-3 text-center text-[--color-muted] text-sm md:text-base">
+              Discover how each location connects to the heart of our philosophy
+              — through dining, wellness and adventure
+            </p>
+
+            <div className="grid grid-cols-1 mt-10 md:grid-cols-3">
+              <div className="flex flex-col justify-between border border-[--color-border] p-8 md:p-10 bg-background">
+                <div>
+                  <h3 className="font-serif text-2xl">
+                    Wellness at The Malkai
+                  </h3>
+                  <p className="mt-4 text-[--color-muted] text-sm leading-relaxed">
+                    Ancient rituals. Open‑air sanctuaries. A philosophy of
+                    stillness and renewal.
+                  </p>
+                </div>
+                <div className="mt-8">
+                  <Link
+                    href="#wellness"
+                    className="inline-block underline underline-offset-8 font-sans text-[12px] tracking-[0.18em] uppercase text-foreground/90 hover:text-foreground"
+                  >
+                    Learn more
+                  </Link>
+                  <div className="mt-2 h-[1px] w-24 bg-[--color-border]" />
+                </div>
+              </div>
+
+              <div className="flex flex-col justify-between border-x-0 border-y border-[--color-border] p-8 md:p-10 bg-background">
+                <div>
+                  <h3 className="font-serif text-2xl">Dining at The Malkai</h3>
+                  <p className="mt-4 text-[--color-muted] text-sm leading-relaxed">
+                    From cliff‑edge feasts to orchard lunches, every plate tells
+                    a local story.
+                  </p>
+                </div>
+                <div className="mt-8">
+                  <Link
+                    href="#dining"
+                    className="inline-block underline underline-offset-8 font-sans text-[12px] tracking-[0.18em] uppercase text-foreground/90 hover:text-foreground"
+                  >
+                    Learn more
+                  </Link>
+                  <div className="mt-2 h-[1px] w-24 bg-[--color-border]" />
+                </div>
+              </div>
+
+              <div className="flex flex-col justify-between border border-[--color-border] p-8 md:p-10 bg-background">
+                <div>
+                  <h3 className="font-serif text-2xl">
+                    Adventures Across Oman
+                  </h3>
+                  <p className="mt-4 text-[--color-muted] text-sm leading-relaxed">
+                    Private islands, desert safaris, canyon hikes—tailored to
+                    you.
+                  </p>
+                </div>
+                <div className="mt-8">
+                  <Link
+                    href="#adventures"
+                    className="inline-block underline underline-offset-8 font-sans text-[12px] tracking-[0.18em] uppercase text-foreground/90 hover:text-foreground"
+                  >
+                    Learn more
+                  </Link>
+                  <div className="mt-2 h-[1px] w-24 bg-[--color-border]" />
+                </div>
+              </div>
             </div>
           </div>
         </div>
