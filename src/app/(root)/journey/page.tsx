@@ -1,3 +1,4 @@
+import Divider from "@/app/components/Divider";
 import Link from "next/link";
 
 export default function Journey() {
@@ -75,13 +76,7 @@ export default function Journey() {
             soul
           </h2>
 
-          {/* divider */}
-          <div className="flex justify-center mt-8">
-            <div className="relative w-28 h-px bg-black">
-              <span className="absolute -left-2 top-1/2 h-1.5 w-1.5 -translate-y-1/2 rounded-full border border-[--color-border] bg-background" />
-              <span className="absolute -right-2 top-1/2 h-1.5 w-1.5 -translate-y-1/2 rounded-full border border-[--color-border] bg-background" />
-            </div>
-          </div>
+          <Divider />
 
           <h2 className="font-serif text-2xl md:text-[28px] text-center max-w-3xl place-self-center">
             Your journey ascends through three distinct realms of Oman: Barkaa,
@@ -194,12 +189,7 @@ export default function Journey() {
             </div>
           </div>
 
-          <div className="flex justify-center mt-8">
-            <div className="relative w-28 h-px bg-black">
-              <span className="absolute -left-2 top-1/2 h-1.5 w-1.5 -translate-y-1/2 rounded-full border border-[--color-border] bg-background" />
-              <span className="absolute -right-2 top-1/2 h-1.5 w-1.5 -translate-y-1/2 rounded-full border border-[--color-border] bg-background" />
-            </div>
-          </div>
+          <Divider />
 
           {/* Includes list section */}
           <div className="mt-12">
@@ -232,12 +222,12 @@ export default function Journey() {
           </div>
 
           {/* Travel services cards */}
-          <div className="mt-16 pt-10 border-t border-[--color-border]">
+          <div className="mt-16">
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
               {/* Card 1 */}
               <div className="flex flex-col">
                 <div className="overflow-hidden border h-[360px] w-full border-[--color-border] bg-[#efefef]" />
-                <div className="pl-24 mt-8">
+                <div className="pl-16 mt-8">
                   <h3 className="font-serif text-2xl">
                     Airport Meet and Greet
                   </h3>
@@ -254,7 +244,6 @@ export default function Journey() {
                     >
                       Plan your stay
                     </Link>
-                    <div className="mt-2 h-[1px] w-28 bg-[--color-border]" />
                   </div>
                 </div>
               </div>
@@ -262,7 +251,7 @@ export default function Journey() {
               {/* Card 2 */}
               <div className="flex flex-col">
                 <div className="overflow-hidden border h-[360px] w-full border-[--color-border] bg-[#efefef]" />
-                <div className="pl-24 mt-8">
+                <div className="pl-16 mt-8">
                   <h3 className="font-serif text-2xl">A Private Car</h3>
                   <p className="mt-4 text-[--color-muted] text-sm leading-relaxed max-w-xl">
                     Enjoy the exclusive use of a chauffeured Land Rover
@@ -277,12 +266,10 @@ export default function Journey() {
                     >
                       Plan your stay
                     </Link>
-                    <div className="mt-2 h-[1px] w-28 bg-[--color-border]" />
                   </div>
                 </div>
               </div>
             </div>
-            <div className="mt-12 border-b border-[--color-border]" />
           </div>
 
           {/* FAQ Section */}
