@@ -271,24 +271,12 @@ export default function Sustainability() {
           {/* Enrichment cards */}
           <div className="mt-20">
             <h2 className="font-serif text-2xl md:text-[28px] text-center">
-              Your journey, enriched.
+              See how sustainability intertwines with our philosophy of renewal,
+              adventure and flavour.
             </h2>
-            <p className="mt-3 text-center text-[--color-muted] text-sm md:text-base">
-              Discover how each location connects to the heart of our philosophy
-              — through dining, wellness and adventure
-            </p>
-
             <div className="grid grid-cols-1 mt-10 md:grid-cols-3">
               <div className="flex flex-col justify-between border border-[--color-border] p-8 md:p-10 bg-background">
-                <div>
-                  <h3 className="font-serif text-2xl">
-                    Wellness at The Malkai
-                  </h3>
-                  <p className="mt-4 text-[--color-muted] text-sm leading-relaxed">
-                    Ancient rituals. Open‑air sanctuaries. A philosophy of
-                    stillness and renewal.
-                  </p>
-                </div>
+                <h3 className="font-serif text-2xl">Wellness at The Malkai</h3>
                 <div className="mt-8">
                   <Link
                     href="#wellness"
@@ -301,13 +289,7 @@ export default function Sustainability() {
               </div>
 
               <div className="flex flex-col justify-between border-x-0 border-y border-[--color-border] p-8 md:p-10 bg-background">
-                <div>
-                  <h3 className="font-serif text-2xl">Dining at The Malkai</h3>
-                  <p className="mt-4 text-[--color-muted] text-sm leading-relaxed">
-                    From cliff‑edge feasts to orchard lunches, every plate tells
-                    a local story.
-                  </p>
-                </div>
+                <h3 className="font-serif text-2xl">Dining at The Malkai</h3>
                 <div className="mt-8">
                   <Link
                     href="#dining"
@@ -320,15 +302,7 @@ export default function Sustainability() {
               </div>
 
               <div className="flex flex-col justify-between border border-[--color-border] p-8 md:p-10 bg-background">
-                <div>
-                  <h3 className="font-serif text-2xl">
-                    Adventures Across Oman
-                  </h3>
-                  <p className="mt-4 text-[--color-muted] text-sm leading-relaxed">
-                    Private islands, desert safaris, canyon hikes—tailored to
-                    you.
-                  </p>
-                </div>
+                <h3 className="font-serif text-2xl">The Malkai Locations</h3>
                 <div className="mt-8">
                   <Link
                     href="#adventures"
