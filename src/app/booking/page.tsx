@@ -4,6 +4,7 @@ import StepDuration from "@/app/booking/steps/StepDuration";
 import StepDates from "@/app/booking/steps/StepDates";
 import StepGuests from "@/app/booking/steps/StepGuests";
 import StepInterests from "@/app/booking/steps/StepInterests";
+import StepContactForm from "@/app/booking/steps/StepContactForm";
 
 export default function Booking() {
   const [currentStep, setCurrentStep] = useState<number>(0);
@@ -64,7 +65,9 @@ export default function Booking() {
             ? "Select Dates"
             : currentStep === 2
             ? "Add # Guests"
-            : "Pick Your Interests"}
+            : currentStep === 3
+            ? "Pick Your Interests"
+            : "Fill Your Details"}
         </h1>
         {currentStep > 0 && (
           <button
@@ -120,6 +123,10 @@ export default function Booking() {
               }
               onNext={() => setCurrentStep(4)}
             />
+          )}
+
+          {currentStep === 4 && (
+            <StepContactForm onNext={() => setCurrentStep(5)} />
           )}
         </section>
 
