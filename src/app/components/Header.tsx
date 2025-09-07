@@ -1,10 +1,18 @@
 import Link from "next/link";
 import Image from "next/image";
+import { twMerge } from "tailwind-merge";
+import { ComponentProps } from "react";
 
-export default function Header() {
+interface HeaderProps {
+  classname?: {
+    logoClassName?: ComponentProps<"img">["className"];
+  };
+}
+
+export default function Header(props: HeaderProps) {
   return (
     <header className="absolute inset-x-0 top-0 z-30 text-white">
-      <div className="px-6 pt-6 mx-aut">
+      <div className="px-6 pt-6 mx-auto">
         <div className="flex justify-between items-center h-20">
           <div className="w-24" />
           <Link href="/" aria-label="The Malkai">
@@ -13,7 +21,7 @@ export default function Header() {
               alt="The Malkai"
               width={220}
               height={64}
-              className="brightness-0 invert"
+              className={props.classname?.logoClassName}
               priority
             />
           </Link>
