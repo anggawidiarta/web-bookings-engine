@@ -30,7 +30,7 @@ export default function RootLayout({
       <body
         className={`${brandSans.variable} ${brandSerif.variable} antialiased bg-background text-foreground`}
       >
-        <Header />
+        <Header classname={{ logoClassName: "brightness-0 invert" }} />
         {children}
         <Footer />
       </body>
