@@ -1,11 +1,12 @@
 "use client";
 import { useMemo, useState } from "react";
-import StepDuration from "@/app/booking/steps/StepDuration";
-import StepDates from "@/app/booking/steps/StepDates";
-import StepGuests from "@/app/booking/steps/StepGuests";
-import StepInterests from "@/app/booking/steps/StepInterests";
-import StepContactForm from "@/app/booking/steps/StepContactForm";
-import StepReview from "@/app/booking/steps/StepReview";
+import StepDuration from "@/app/components/BookingComponent/StepDuration";
+import StepDates from "@/app/components/BookingComponent/StepDates";
+import StepGuests from "@/app/components/BookingComponent/StepGuests";
+import StepInterests from "@/app/components/BookingComponent/StepInterests";
+import StepContactForm from "@/app/components/BookingComponent/StepContactForm";
+import StepReview from "@/app/components/BookingComponent/StepReview";
+import Image from "next/image";
 
 export default function Booking() {
   const [currentStep, setCurrentStep] = useState<number>(0);
@@ -77,7 +78,14 @@ export default function Booking() {
             onClick={() => setCurrentStep((s) => Math.max(0, s - 1))}
             className="inline-flex items-center gap-2 rounded bg-black px-3 py-1.5 text-[12px] font-medium text-white hover:bg-black/90"
           >
-            <span>‹</span> Back
+            <Image
+              src="/images/chevron-left.svg"
+              className="bg-transparent invert"
+              alt="Back"
+              width={16}
+              height={16}
+            />{" "}
+            Back
           </button>
         )}
       </div>

@@ -29,7 +29,7 @@ export default function BookingLayout({
       <body
         className={`${brandSans.variable} ${brandSerif.variable} antialiased bg-background text-foreground`}
       >
-        <Header />
+        <Header isBooking />
         {children}
       </body>
     </html>
