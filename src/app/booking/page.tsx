@@ -5,6 +5,7 @@ import StepDates from "@/app/booking/steps/StepDates";
 import StepGuests from "@/app/booking/steps/StepGuests";
 import StepInterests from "@/app/booking/steps/StepInterests";
 import StepContactForm from "@/app/booking/steps/StepContactForm";
+import StepReview from "@/app/booking/steps/StepReview";
 
 export default function Booking() {
   const [currentStep, setCurrentStep] = useState<number>(0);
@@ -39,7 +40,7 @@ export default function Booking() {
   ];
 
   return (
-    <main className="px-6 pt-28 pb-24 mx-auto max-w-6xl">
+    <main className="px-6 pt-28 pb-24 mx-auto max-w-6xl mt-8">
       <nav className="mb-10 flex flex-wrap items-center gap-2 text-[12px] tracking-wide text-muted">
         {steps.map((label, index) => (
           <div key={label} className="flex items-center">
@@ -67,7 +68,9 @@ export default function Booking() {
             ? "Add # Guests"
             : currentStep === 3
             ? "Pick Your Interests"
-            : "Fill Your Details"}
+            : currentStep === 4
+            ? "Fill Your Details"
+            : "Review Your Details"}
         </h1>
         {currentStep > 0 && (
           <button
@@ -128,6 +131,8 @@ export default function Booking() {
           {currentStep === 4 && (
             <StepContactForm onNext={() => setCurrentStep(5)} />
           )}
+
+          {currentStep === 5 && <StepReview />}
         </section>
 
         {/* Summary Section */}
