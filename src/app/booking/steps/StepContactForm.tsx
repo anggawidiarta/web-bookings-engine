@@ -1,11 +1,13 @@
 "use client";
 import countries from "@/app/constants/countries";
+import { useState } from "react";
 
 interface StepContactFormProps {
   onNext: () => void;
 }
 
 export default function StepContactForm(props: StepContactFormProps) {
+  const [travelPartner, setTravelPartner] = useState<string>("");
   return (
     <form
       className="flex flex-col gap-4 max-w-2xl"
@@ -14,7 +16,7 @@ export default function StepContactForm(props: StepContactFormProps) {
         props.onNext();
       }}
     >
-      <div className="grid grid-cols-3 gap-3">
+      <div className="grid grid-cols-[110px_1fr_1fr] gap-3">
         <select className="rounded border border-border bg-white/70 px-3 py-2 text-[14px]">
           <option>Title</option>
           <option>Mr</option>
@@ -32,10 +34,10 @@ export default function StepContactForm(props: StepContactFormProps) {
         />
       </div>
 
-      <div className="grid grid-cols-3 gap-3">
+      <div className="grid grid-cols-[3fr_1fr] gap-3">
         <input
           type="email"
-          className="col-span-2 rounded border border-border bg-white/70 px-3 py-2 text-[14px]"
+          className="rounded border border-border bg-white/70 px-3 py-2 text-[14px]"
           placeholder="Email address"
         />
         <div className="grid grid-cols-[80px_1fr] gap-2">
@@ -61,13 +63,36 @@ export default function StepContactForm(props: StepContactFormProps) {
           ))}
         </select>
 
-        <select className="rounded border border-border bg-white/70 px-3 py-2 text-[14px]">
-          <option>I am a...</option>
-          <option>Solo Traveler</option>
-          <option>Couple</option>
-          <option>Family</option>
-          <option>Group</option>
+        <div className="border-t border-border" />
+
+        <select
+          value={travelPartner}
+          onChange={(e) => setTravelPartner(e.target.value)}
+          className="rounded border border-border bg-white/70 px-3 py-2 text-[14px]"
+        >
+          <option disabled>I am a...</option>
+          <option value="solo-traveler">Solo Traveler</option>
+          <option value="couple">Couple</option>
+          <option value="family">Family</option>
+          <option value="group">Group</option>
+          <option value="travel-partner">Travel Partner</option>
         </select>
+
+        {travelPartner === "travel-partner" && (
+          <>
+            <div className="grid grid-cols-2 gap-3">
+              <input
+                className="rounded border border-border bg-white/70 px-3 py-2 text-[14px]"
+                placeholder="Agent Name"
+              />
+              <input
+                className="rounded border border-border bg-white/70 px-3 py-2 text-[14px]"
+                placeholder="Company"
+              />
+            </div>
+            <div className="border-b border-border" />
+          </>
+        )}
       </div>
 
       <textarea
@@ -78,8 +103,7 @@ export default function StepContactForm(props: StepContactFormProps) {
       <label className="flex items-start gap-3 text-[12px]">
         <input
           type="checkbox"
-          defaultChecked
-          className="mt-1 h-4 w-4 accent-black border border-border"
+          className="mt-1 w-4 h-4 border accent-black border-border"
         />
         <span>
           I consent to my submitted data being collected and managed as per
@@ -89,8 +113,7 @@ export default function StepContactForm(props: StepContactFormProps) {
       <label className="flex items-start gap-3 text-[12px]">
         <input
           type="checkbox"
-          defaultChecked
-          className="mt-1 h-4 w-4 accent-black border border-border"
+          className="mt-1 w-4 h-4 border accent-black border-border"
         />
         <span>
           I sign-up to receive news about new openings and inspiration from The
