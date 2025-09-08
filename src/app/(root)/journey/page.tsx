@@ -1,43 +1,12 @@
 import Divider from "@/app/components/Divider";
+import {
+  faqs,
+  journeyIncludesLeft,
+  journeyIncludesRight,
+} from "@/app/constants/data";
 import Link from "next/link";
 
 export default function Journey() {
-  const includesLeft = [
-    "Personalised itinerary planning service",
-    "Laundry services",
-    "Access to cultural sites",
-    "Daily excursions with an English-speaking guide, driver and private Land Rover Defender",
-    "In-house beverages, including house wines and spirits",
-  ];
-  const includesRight = [
-    "Personal Airport Welcome and Departure Services",
-    "Picnics en route to other Malkai sites",
-    "All in-house meals",
-    "Selected House labels of fine wines and spirits, coffee, tea and soft drinks",
-  ];
-  const faqs = [
-    {
-      q: "Who will handle my travel arrangements including flights and visa?",
-      a: "Your dedicated Murshid can coordinate and advise on flights and visa formalities, ensuring a seamless arrival and departure experience.",
-    },
-    {
-      q: "How do the three Malkai sites differ?",
-      a: "Each Malkai site is located in a different region of Oman with its own distinct landscapes, climate and local identity. Each location offers its unique variety of activities and experiences inviting guests to experience a different aspect of Oman — whether immersing in history, nature, spirituality or culture.",
-    },
-    {
-      q: "What are the different activities and experiences across the three Malkai sites?",
-      a: "From mountain hikes and canyoning to desert stargazing and cultural excursions, your itinerary is tailored to your interests across Barkaa, Hajar and Sharqiyah.",
-    },
-    {
-      q: "Are all activities included in the price?",
-      a: "Core experiences are included, with optional bespoke activities and private arrangements available upon request.",
-    },
-    {
-      q: "What is the best time of year to visit Oman?",
-      a: "The cooler months are most popular, though each season reveals a different character of the landscapes. We’ll help you choose the best period for your interests.",
-    },
-  ];
-
   return (
     <main>
       {/* Full-bleed Hero */}
@@ -157,70 +126,57 @@ export default function Journey() {
           </div>
 
           {/* Two column content: media + copy */}
-          <div className="grid relative grid-cols-1 gap-10 -mx-24 mt-10 w-full md:grid-cols-2">
+          {/* Two column content: media + copy */}
+          <div className="grid relative grid-cols-1 gap-24 -mx-24 mt-10 w-full md:grid-cols-2">
             <div className="overflow-hidden border h-[500px] w-full border-[--color-border] bg-[#efefef] aspect-[16/10] md:aspect-[4/3]"></div>
 
             <div className="max-w-3xl">
-              <h3 className="font-serif text-xl md:text-2xl">
-                An Extraordinary Journey
+              <h3 className="font-serif text-3xl md:text-[32px]">
+                (مرشد) Arabic for “guide” or “teacher”
               </h3>
-              <div className="mt-4 space-y-3 text-[--color-muted] text-sm leading-relaxed">
+              <div className="mt-4 space-y-4 text-[--color-muted] text-sm leading-relaxed">
                 <p>
-                  Personalised to each guest, The Malkai journey spans three
-                  unparalleled locations. Throughout the trip, guests enjoy
-                  exclusive use of a chauffeured Land Rover Defender with a
-                  personal guide.
+                  A Murshid, your guide and companion, will tailor your Malkai
+                  journey, serving as a guide, butler, concierge, and hiking
+                  partner, with every detail tailored to suit your interests and
+                  preferences.
                 </p>
-                <p>
-                  Together, these intimate explorations reveal Oman’s wild
-                  beauty, epic vistas and Arabian grandeur.
-                </p>
-              </div>
-
-              <div className="mt-6">
-                <Link
-                  href="#journey"
-                  className="inline-block text-[12px] tracking-[0.18em] uppercase text-foreground/90 hover:text-foreground font-sans"
-                >
-                  Discover the Journey
-                </Link>
-                <div className="mt-2 h-[1px] w-28 bg-[--color-border]" />
               </div>
             </div>
           </div>
 
           <Divider />
 
-          {/* Includes list section */}
-          <div className="mt-12">
-            <h2 className="font-serif text-2xl md:text-[28px] text-center max-w-4xl mx-auto">
+          <div className="mx-auto max-w-4xl">
+            <h3 className="font-serif text-xl text-center md:text-2xl">
               A seven-night Malkai journey begins at $2,000 per Pavilion, per
               night and includes
-            </h2>
+            </h3>
+            <div className="grid grid-cols-1 gap-10 mt-6 md:grid-cols-2">
+              <ul className="border-b divide-y divide-neutral-200 border-neutral-200">
+                {journeyIncludesLeft.map((item, index) => (
+                  <li key={index} className="flex gap-4 items-start py-4">
+                    <span className="mt-2 w-2 h-2 rounded-full bg-foreground/70" />
+                    <p className="text-sm leading-relaxed text-[--color-muted]">
+                      {item}
+                    </p>
+                  </li>
+                ))}
+              </ul>
+              <ul className="border-b divide-y divide-neutral-200 border-neutral-200">
+                {journeyIncludesRight.map((item, index) => (
+                  <li key={index} className="flex gap-4 items-start py-4">
+                    <span className="mt-2 w-2 h-2 rounded-full bg-foreground/70" />
+                    <p className="text-sm leading-relaxed text-[--color-muted]">
+                      {item}
+                    </p>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
 
-          <div className="grid grid-cols-1 gap-12 mt-10 w-full md:grid-cols-2">
-            {/* Left column */}
-            <ul className="divide-y divide-[--color-border]">
-              {includesLeft.map((item, index) => (
-                <li key={index} className="flex gap-4 items-start py-5">
-                  <span className="mt-2 w-2 h-2 rounded-full bg-foreground/70" />
-                  <p className="text-[15px] leading-relaxed">{item}</p>
-                </li>
-              ))}
-            </ul>
-
-            {/* Right column */}
-            <ul className="divide-y divide-[--color-border]">
-              {includesRight.map((item, index) => (
-                <li key={index} className="flex gap-4 items-start py-5">
-                  <span className="mt-2 w-2 h-2 rounded-full bg-foreground/70" />
-                  <p className="text-[15px] leading-relaxed">{item}</p>
-                </li>
-              ))}
-            </ul>
-          </div>
-
+          <Divider />
           {/* Travel services cards */}
           <div className="mt-16">
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2">

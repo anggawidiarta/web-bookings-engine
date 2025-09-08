@@ -1,3 +1,5 @@
+import Divider from "@/app/components/Divider";
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Locations() {
@@ -42,12 +44,7 @@ export default function Locations() {
           </h2>
 
           {/* divider */}
-          <div className="flex justify-center mt-8">
-            <div className="relative w-28 h-px bg-black">
-              <span className="absolute -left-2 top-1/2 h-1.5 w-1.5 -translate-y-1/2 rounded-full border border-[--color-border] bg-background" />
-              <span className="absolute -right-2 top-1/2 h-1.5 w-1.5 -translate-y-1/2 rounded-full border border-[--color-border] bg-background" />
-            </div>
-          </div>
+          <Divider />
 
           <h2 className="font-serif text-2xl md:text-[28px] text-center max-w-3xl place-self-center">
             Your journey ascends through three distinct realms of Oman:
@@ -57,7 +54,13 @@ export default function Locations() {
           <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
             {/* Barkaa */}
             <div className="flex flex-col h-full">
-              <div className="overflow-hidden border h-[550px] w-full border-[--color-border] bg-[#efefef]" />
+              <Image
+                src={"/images/malkai-barkaa-pavilion-exterior.original.jpg"}
+                width={550}
+                height={50}
+                className="h-full"
+                alt="Hajar"
+              />
               <div className="flex flex-col flex-1 mt-8">
                 <h3 className="font-serif text-2xl">Barkaa</h3>
                 <p className="mt-6 mb-6 text-[--color-muted] text-sm leading-relaxed">
@@ -74,7 +77,13 @@ export default function Locations() {
 
             {/* Hajar */}
             <div className="flex flex-col h-full">
-              <div className="overflow-hidden border h-[550px] w-full border-[--color-border] bg-[#efefef]" />
+              <Image
+                src={"/images/hajar-placeholder.original.jpg"}
+                width={550}
+                height={50}
+                className="h-full"
+                alt="Hajar"
+              />{" "}
               <div className="flex flex-col flex-1 mt-8">
                 <h3 className="font-serif text-2xl">Al Hajar</h3>
                 <p className="mt-3 mb-6 text-[--color-muted] text-sm leading-relaxed">
@@ -91,7 +100,13 @@ export default function Locations() {
 
             {/* Sharqiyah */}
             <div className="flex flex-col h-full">
-              <div className="overflow-hidden border h-[550px] w-full border-[--color-border] bg-[#efefef]" />
+              <Image
+                src={"/images/malkai-sharqiyah.original.jpg"}
+                width={550}
+                height={50}
+                className="h-full"
+                alt="Hajar"
+              />{" "}
               <div className="flex flex-col flex-1 mt-8">
                 <h3 className="font-serif text-2xl">Sharqiyah</h3>
                 <p className="mt-3 mb-6 text-[--color-muted] text-sm leading-relaxed">
@@ -107,6 +122,8 @@ export default function Locations() {
             </div>
           </div>
 
+          <Divider />
+
           {/* Two column content: media + copy */}
           <div className="grid relative grid-cols-1 gap-24 -mx-24 mt-10 w-full md:grid-cols-2">
             <div className="overflow-hidden border h-[500px] w-full border-[--color-border] bg-[#efefef] aspect-[16/10] md:aspect-[4/3]"></div>
@@ -121,13 +138,6 @@ export default function Locations() {
                   expressed at The Malkai.
                 </p>
               </div>
-            </div>
-          </div>
-
-          <div className="flex justify-center mt-8">
-            <div className="relative w-28 h-px bg-black">
-              <span className="absolute -left-2 top-1/2 h-1.5 w-1.5 -translate-y-1/2 rounded-full border border-[--color-border] bg-background" />
-              <span className="absolute -right-2 top-1/2 h-1.5 w-1.5 -translate-y-1/2 rounded-full border border-[--color-border] bg-background" />
             </div>
           </div>
         </div>

@@ -1,4 +1,8 @@
 import Divider from "@/app/components/Divider";
+import {
+  journeyIncludesLeft,
+  journeyIncludesRight,
+} from "@/app/constants/data";
 import Link from "next/link";
 
 export default function Pavilions() {
@@ -15,20 +19,6 @@ export default function Pavilions() {
     "Living area with reading chairs, writing desk",
     "Twin vanities, dressing areas, separate toilet",
     "Air‑conditioning, underfloor heating",
-  ];
-  const journeyIncludesLeft = [
-    "Personalised itinerary planning service",
-    "All in‑house meals",
-    "Selected House labels of fine wines and spirits, coffee, tea and soft drinks",
-    "Laundry services",
-    "Access to cultural sites",
-  ];
-  const journeyIncludesRight = [
-    "Personal Airport Welcome and Departure Services",
-    "Daily excursions with an English‑speaking guide, driver and private Land Rover Defender",
-    "In‑house beverages, including house wines and spirits",
-    "Picnics en route to other Malkai sites",
-    "Personalised itinerary planning service",
   ];
 
   return (

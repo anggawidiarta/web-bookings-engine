@@ -16,7 +16,7 @@ export default function Home() {
   return (
     <main>
       {/* Full-bleed Hero */}
-      <section className="relative h-[100vh] min-h-[560px]">
+      <section className="relative h-[100vh] min-h-[560px]" data-aos="fade-down" data-aos-duration="1500">
         {/* Media placeholder (replace with real image/video) */}
         <div className="absolute inset-0">
           <div className="w-full h-full bg-transparent" />
@@ -36,10 +36,13 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Journey / Locations - keep from previous implementation */}
+      {/* Homepage Section */}
       <section
-        id="journey"
-        className="border-t border-[--color-border] bg-background"
+        id="homepage"
+        data-aos="fade-up"
+        data-aos-duration="1500"
+        data-aos-anchor="#homepage"
+        className="bg-background"
       >
         <div className="flex flex-col gap-10 py-14 mx-auto md:py-20">
           {/* Intro heading and description */}

@@ -1,5 +1,6 @@
 // import Link from "next/link";
 
+import Divider from "@/app/components/Divider";
 import Link from "next/link";
 
 export default function Barkaa() {
@@ -42,13 +43,7 @@ export default function Barkaa() {
             in working farms, falaj water rills, and reflection pools.
           </h2>
 
-          {/* divider */}
-          <div className="flex justify-center mt-8">
-            <div className="relative w-28 h-px bg-black">
-              <span className="absolute -left-2 top-1/2 h-1.5 w-1.5 -translate-y-1/2 rounded-full border border-[--color-border] bg-background" />
-              <span className="absolute -right-2 top-1/2 h-1.5 w-1.5 -translate-y-1/2 rounded-full border border-[--color-border] bg-background" />
-            </div>
-          </div>
+          <Divider />
 
           {/* Image grid with captions */}
           <div className="flex flex-col gap-12">
@@ -93,6 +88,8 @@ export default function Barkaa() {
               </figure>
             </div>
           </div>
+
+          <Divider />
 
           {/* Two column content: media + copy */}
           <div className="grid relative grid-cols-1 gap-10 mt-10 w-full md:grid-cols-2">
